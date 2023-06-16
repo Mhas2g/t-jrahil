@@ -1,0 +1,10 @@
+local Section = Tab:NewSection("Auto pick up Files")
+Section:NewButton("Run", "Pick up all Files", function()
+    while task.wait() do
+        for i,v in pairs(game.Workspace:GetChildren()) do
+            if v.Name == "classified files" and v:FindFirstChild("Handle") then
+                firetouchinterest(v.Handle, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+            end
+        end
+    end
+end)
